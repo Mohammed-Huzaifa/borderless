@@ -1,0 +1,245 @@
+/* Footer Section */
+.footerSection {
+    padding: 3rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  @media (min-width: 768px) {
+    .footerSection {
+      padding: 4rem 2rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .footerSection {
+      padding: 4rem 4rem;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .footerSection {
+      padding: 4rem 5rem;
+    }
+  }
+  
+  /* Gradient Background */
+  .gradientBackground {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1B326D 0%, #2D54B5 100%);
+  }
+  
+  /* Ribbon Background */
+  .ribbonBackground {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, #5776C4 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, #5776C4 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 80%, #5776C4 0%, transparent 50%);
+    opacity: 0.2;
+  }
+  
+  /* Content Container */
+  .contentContainer {
+    position: relative;
+    z-index: 10;
+    max-width: 112rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Heading Container */
+  .headingContainer {
+    margin-bottom: 3rem;
+  }
+  
+  .mainHeading {
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+  
+  .subtitle {
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #B8C5E8;
+    line-height: 1.4;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  }
+  
+  /* CTA Container */
+  .ctaContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .ctaContainer {
+      flex-direction: row;
+    }
+  }
+  
+  /* CTA Buttons */
+  .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ctaButton:hover {
+    transform: scale(1.05);
+    padding-right: 3rem;
+  }
+  
+  .ctaPrimary {
+    background-color: white;
+    color: black;
+  }
+  
+  .ctaPrimary:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .ctaSecondary {
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+  }
+  
+  .ctaSecondary:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* CTA Arrow */
+  .ctaArrow {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: 0.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translateX(0);
+  }
+  
+  .ctaButton:hover .ctaArrow {
+    opacity: 1;
+    transform: translateX(0.25rem);
+  }
+  
+  /* Contact Information */
+  .contactInfo {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+  
+  .contactInfo p {
+    font-size: 0.875rem;
+    color: #B8C5E8;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+  }
+  
+  /* Social Media Carousel */
+  .socialCarousel {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+  
+  .socialTrack {
+    display: flex;
+    animation: scrollRight 30s linear infinite;
+    gap: 1rem;
+    will-change: transform;
+  }
+  
+  .socialTrack:hover {
+    animation-play-state: paused;
+  }
+  
+  /* Social Pills */
+  .socialPill {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .socialPill:hover {
+    border-color: white;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* Social Icons */
+  .socialIcon {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0;
+    transform: translateX(-0.5rem);
+    transition: all 0.3s ease;
+  }
+  
+  .socialPill:hover .socialIcon {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Keyframes */
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  

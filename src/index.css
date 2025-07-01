@@ -1,13 +1,130 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-bc-bg-default text-bc-text antialiased;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /* Button Base Styles */
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-bc font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    @apply btn-base bg-bc-primary text-white hover:bg-bc-primary-600 focus:ring-bc-primary-500 hover:shadow-bc-md hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply btn-base bg-bc-secondary text-white hover:bg-bc-secondary-600 focus:ring-bc-secondary-500 hover:shadow-bc-md hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply btn-base border-2 border-bc-primary text-bc-primary hover:bg-bc-primary hover:text-white focus:ring-bc-primary-500 hover:shadow-bc-md;
+  }
+  
+  /* Button Sizes */
+  .btn-large {
+    @apply px-8 py-4 text-btn-large;
+  }
+  
+  .btn-medium {
+    @apply px-6 py-3 text-btn-medium;
+  }
+  
+  .btn-small {
+    @apply px-4 py-2 text-btn-small;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Interactive word hover effects */
+  .interactive-word-brands {
+    @apply hover:text-orange-400 transition-colors duration-300;
+  }
+  
+  .interactive-word-products {
+    @apply hover:text-blue-400 transition-colors duration-300;
+  }
+  
+  .interactive-word-stories {
+    @apply hover:text-green-400 transition-colors duration-300;
+  }
+  
+  .interactive-word-digital {
+    @apply hover:text-blue-400 transition-colors duration-300;
+  }
+  
+  .interactive-word-interactions {
+    @apply hover:text-pink-400 transition-colors duration-300;
+  }
+  
+  .interactive-word-tech {
+    @apply hover:text-yellow-400 transition-colors duration-300;
+  }
+  
+  .interactive-word-intelligence {
+    @apply hover:text-orange-400 transition-colors duration-300;
+  }
+
+  
+    
+      /* Mobile menu slide animations */
+      @keyframes slide-up {
+        from { 
+          opacity: 0; 
+          transform: translateY(30px); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0); 
+        }
+      }
+      
+      .animate-slide-up {
+        animation: slide-up 0.5s ease-out forwards;
+        opacity: 0;
+      }
+  
+  
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+  }
 }
