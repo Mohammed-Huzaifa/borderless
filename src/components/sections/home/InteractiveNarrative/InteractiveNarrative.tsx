@@ -29,7 +29,7 @@ const InteractiveWord: React.FC<InteractiveWordProps> = ({
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePos({ 
       x: rect.left + rect.width / 2, 
-      y: rect.top + rect.height / 2 // Center of the word
+      y: rect.top + rect.height / 3 // Center of the word
     });
     setShowTags(true);
     setIsHovered(true);
@@ -201,7 +201,7 @@ const InteractiveNarrative: React.FC = () => {
               word="products" 
               tags={serviceData.products}
               style={{ color: '#E8E8E8' }}
-              hoverColor="#3B82F6"
+              hoverColor="#FFFFFF"
             />{' '}
             evolve,
             <br/>
@@ -209,14 +209,14 @@ const InteractiveNarrative: React.FC = () => {
               word="stories" 
               tags={serviceData.stories}
               style={{ color: '#E8E8E8' }}
-              hoverColor="#10B981"
+              hoverColor="#2D933E"
             />{' '}
             move hearts,{' '}
             <InteractiveWord 
               word="digital" 
               tags={serviceData.digital}
               style={{ color: '#E8E8E8' }}
-              hoverColor="#3B82F6"
+              hoverColor="#5776C4"
             />{' '}
             comes alive,
             <br />
@@ -231,7 +231,7 @@ const InteractiveNarrative: React.FC = () => {
               word="tech" 
               tags={serviceData.tech}
               style={{ color: '#E8E8E8' }}
-              hoverColor="#F59E0B"
+              hoverColor="#FEBF12"
             />{' '}
             fades
             <br />

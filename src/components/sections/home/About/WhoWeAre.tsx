@@ -3,21 +3,30 @@ import { Button } from '../../../ui/Button';
 
 const WhoWeAre: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 px-4 bg-white">
+    <section className="py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
           
           {/* Left Column - Compact Heading */}
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl font-normal text-black leading-tight tracking-tight">
-              Who we are?!
-            </h2>
+          <h2 
+          className="text-[#1A1A1A] mb-8"
+          style={{
+            fontSize: '40px',           // Client requirement: 40px
+            fontWeight: '400',          // Client requirement: regular
+            lineHeight: '120%',         // Client requirement: 120% line height
+            fontFamily: 'Switzer, sans-serif'  // Client requirement: Switzer font
+          }}
+        >
+          Who We Are?
+        </h2>
           </div>
 
           {/* Right Column - Compact Content */}
           <div className="space-y-4 md:space-y-5">
             {/* Description Text - Mobile Line Breaks */}
-            <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed font-normal">
+            <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed font-switzer" style={{
+            }}>
               Borderless Creatives is a global<br className="md:hidden" /> 
               design studio built for the future,<br className="md:hidden" /> 
               crafted with cost-effective<br className="md:hidden" /> 
