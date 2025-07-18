@@ -63,38 +63,47 @@ const StatsSection: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-12 md:py-16 px-4 md:px-8 lg:px-16 xl:px-20"
-      style={{ backgroundColor: '#FEF1EB' }}
+      className="px-4 md:px-8 lg:px-16 xl:px-20"
+      style={{ backgroundColor: '#FEF1EB', paddingTop: '120px', paddingBottom: '120px' }}
     >
       <div className="max-w-6xl mx-auto">
-        
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+        <div
+          className="flex flex-col md:flex-row justify-center items-stretch"
+          style={{ gap: '64px' }}
+        >
           {statsData.map((stat, index) => (
-            <div 
+            <div
               key={stat.title}
               className="text-center md:text-left transform transition-all duration-700 ease-out"
               style={{
                 opacity: startAnimation ? 1 : 0,
                 transform: startAnimation ? 'translateY(0)' : 'translateY(20px)',
-                transitionDelay: `${index * 200}ms`
+                transitionDelay: `${index * 200}ms`,
+                width: '282px',
+                fontFamily: 'Switzer, sans-serif',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
               }}
             >
               {/* Animated Number */}
-              <div className="mb-4">
-                <h3 
+              <div style={{ marginBottom: '16px', width: '100%' }}>
+                <h3
                   className="font-normal tracking-tight leading-none tabular-nums"
                   style={{
-                    fontSize: 'clamp(3rem, 8vw, 5rem)', // Large responsive numbers
+                    fontSize: '72px',
                     color: '#1A1A1A',
-                    lineHeight: '1.1'
+                    lineHeight: '120%',
+                    fontFamily: 'Switzer, sans-serif',
+                    fontWeight: 400,
                   }}
                 >
                   {startAnimation ? (
                     <CountUp
                       start={0}
                       end={stat.number}
-                      duration={2.5 + (index * 0.3)} // Stagger timing
+                      duration={2.5 + index * 0.3}
                       suffix={stat.suffix}
                       useEasing={true}
                       separator=""
@@ -106,13 +115,15 @@ const StatsSection: React.FC = () => {
               </div>
 
               {/* Title */}
-              <div className="mb-3">
-                <h4 
+              <div style={{ marginBottom: '8px', width: '100%' }}>
+                <h4
                   className="font-normal tracking-wide"
                   style={{
-                    fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)', // 18px to 24px
+                    fontSize: '24px',
                     color: '#1A1A1A',
-                    lineHeight: '1.3'
+                    lineHeight: '140%',
+                    fontFamily: 'Switzer, sans-serif',
+                    fontWeight: 400,
                   }}
                 >
                   {stat.title}
@@ -120,13 +131,15 @@ const StatsSection: React.FC = () => {
               </div>
 
               {/* Description */}
-              <div>
-                <p 
+              <div style={{ width: '100%' }}>
+                <p
                   className="font-normal leading-relaxed"
                   style={{
-                    fontSize: 'clamp(0.875rem, 2vw, 1rem)', // 14px to 16px
-                    color: '#6B7280',
-                    lineHeight: '1.6'
+                    fontSize: '16px',
+                    color: '#5F5F5F',
+                    lineHeight: '150%',
+                    fontFamily: 'Switzer, sans-serif',
+                    fontWeight: 400,
                   }}
                 >
                   {stat.description}
@@ -135,7 +148,6 @@ const StatsSection: React.FC = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

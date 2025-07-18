@@ -15,7 +15,42 @@ export const HeroSection: React.FC = () => {
         alignItems: 'center',
       }}
     >
+      {/* Mobile styles */}
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-mobile-container {
+            width: 100% !important;
+            max-width: 100vw !important;
+            justify-content: flex-start !important;
+            padding: 0 !important;
+          }
+          .hero-mobile-content {
+            width: 100% !important;
+            max-width: 100vw !important;
+            text-align: left !important;
+            padding: 0 !important;
+          }
+          .hero-mobile-badge {
+            font-size: 0.95rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+          .hero-mobile-heading {
+            font-size: 1.35rem !important;
+            line-height: 1.35 !important;
+            margin-bottom: 1.5rem !important;
+            word-break: break-word !important;
+          }
+          .hero-mobile-btn {
+            width: 100% !important;
+            justify-content: center !important;
+            font-size: 1rem !important;
+            padding: 1em 0 !important;
+            min-width: 0 !important;
+          }
+        }
+      `}</style>
       <div
+        className="hero-mobile-container"
         style={{
           maxWidth: 1200,
           margin: '0 auto',
@@ -25,6 +60,7 @@ export const HeroSection: React.FC = () => {
         }}
       >
         <div 
+          className="hero-mobile-content"
           style={{ 
             width: '55%',
             maxWidth: '720px',
@@ -33,6 +69,7 @@ export const HeroSection: React.FC = () => {
         >
           {/* Badge */}
           <span
+            className="hero-mobile-badge"
             style={{
               display: 'inline-block',
               background: '#484848', // BC-Primary BerryBlue-100
@@ -50,6 +87,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Heading */}
           <h1
+            className="hero-mobile-heading"
             style={{
               color: '#fff',
               fontWeight: 400,
@@ -66,6 +104,7 @@ export const HeroSection: React.FC = () => {
 
           {/* CTA Button with Corrected Hover State */}
           <button
+            className="hero-mobile-btn"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
